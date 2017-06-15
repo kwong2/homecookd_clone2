@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Homecookd</title>
+    <title>HomeCook'd <%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  	<header class="navbar navbar-fixed-top navbar-inverse">
+  		<div class="container">
+ 
+  			<nav>
+  				<ul class="nav navbar-nav navbar-right">
+  					<li><a href="/static_pages/home">Home</a></li>
+  					<li><a href="/static_pages/about">About</a></li>
+  				</ul>
+  			</nav>
+  		</div>		
+  	</header>
+  	<div class="container">
     <%= yield %>
+  	</div>
+  		
   </body>
 </html>
