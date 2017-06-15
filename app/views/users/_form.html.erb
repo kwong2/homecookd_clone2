@@ -37,6 +37,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password_digest %>
+  </div>
+
+  <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address, id: :user_address %>
   </div>
