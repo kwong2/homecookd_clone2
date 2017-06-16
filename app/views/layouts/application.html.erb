@@ -15,6 +15,9 @@
   				<ul class="nav navbar-nav navbar-right">
   					<li><a href="/static_pages/home">Home</a></li>
   					<li><a href="/static_pages/about">About</a></li>
+            <% if current_user != nil %> 
+            <li><%=link_to "Log Out", logout_path, method: :delete %></li>
+            <% end %>
   				</ul>
   			</nav>
   		</div>		
@@ -22,6 +25,10 @@
   	<div class="container">
     <%= yield %>
   	</div>
+
+    <% if Rails.env.development? %>
+      <%= console %>
+    <% end %>
   		
   </body>
 </html>
