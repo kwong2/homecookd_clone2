@@ -9,10 +9,15 @@
       <%= f.text_field :username, class: 'form-control' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.password_field :password, class: 'form-control' %> <br>
+      <% if current_user == nil %>
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      <% end %>
     <% end %>
+    <% if current_user != nil %>
+    <%= button_to "Log Out", {:controller => 'sessions', :action => 'destroy'} %>
+    <% end %>
+
 
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
