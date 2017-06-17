@@ -26,14 +26,20 @@
     <%= form.text_area :description, id: :food_description %>
   </div>
 
-  <div class="field">
+<!--   <div class="field">
     <%= form.label :picture %>
     <%= form.text_field :picture, id: :food_picture %>
-  </div>
+  </div> -->
+
+
+  <%= form.submit "Post", class: "btn btn-primary" %>
+  <span class="picture">
+    <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
 
   <div class="field">
-    <%= form.label :host_id %>
-    <%= form.text_field :host_id, id: :food_host_id %>
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :food_user_id %>
   </div>
 
   <div class="actions">

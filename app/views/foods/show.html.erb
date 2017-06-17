@@ -17,12 +17,11 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= @food.picture %>
+  <%= image_tag(@food.picture) %>
 </p>
-
 <p>
   <strong>Host:</strong>
-  <%= @food.host_id %>
+  <%= @food.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_food_path(@food) %> |
